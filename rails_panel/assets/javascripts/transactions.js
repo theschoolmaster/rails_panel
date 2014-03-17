@@ -100,6 +100,11 @@ function TransactionsCtrl($scope) {
         $scope.pushToMap($scope.sqlsMap, key, data);
       }
       break;
+    case "sql.sequel":
+      if (data.payload.name !== "SCHEMA") {
+        $scope.pushToMap($scope.sqlsMap, key, data);
+      }
+      break;
     default:
       console.log('Notification not supported:' + data.name);
     }

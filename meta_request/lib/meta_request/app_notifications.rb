@@ -7,6 +7,7 @@ module MetaRequest
       new.
         subscribe("meta_request.log").
         subscribe("sql.active_record").
+        subscribe("sql.sequel").
         subscribe("render_partial.action_view").
         subscribe("render_template.action_view").
         subscribe("process_action.action_controller.exception").

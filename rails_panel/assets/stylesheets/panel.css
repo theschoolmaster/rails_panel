@@ -13,7 +13,6 @@
 
 #tabs, table, tbody, tr, th, .data-grid {
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
 }  
 
 .data-grid table {
@@ -32,11 +31,11 @@
     border-bottom: 1px solid rgb(179, 179, 179);
     height: 30px;
     font-weight: bold;
-    padding: 0 4px;
+    padding: 0 6px;
     white-space: nowrap;
 }
 
-.data-grid table.stupidtable th {
+.data-grid table.stupidtable th[data-sort] {
     cursor: pointer;
 }
 
@@ -60,6 +59,10 @@
 
 table#requests {
   height: 100%;
+}
+
+table#requests td {
+  padding: 8px 6px;
 }
 
 .data-container tr {
@@ -94,6 +97,10 @@ table#requests {
   line-height: 12px;
   height: auto;
   border-right: 1px solid #eee;
+}
+
+.data-grid-details table td.duration {
+  white-space: nowrap;
 }
 
 .data-grid-details table {
@@ -135,8 +142,12 @@ table.header th {
   background: -webkit-gradient(linear, left top, left bottom, from(#ECECEC), to(#D9D9D9))
 }
 
-.method, .format, .status, .view, .db, .other, .duration {
-  width: 50px;
+.method, .format, .status, .view, .db, .other {
+  width: 56px;
+}
+
+#requests .duration {
+  width: 74px;
 }
 
 .status, .method, .format {
@@ -158,14 +169,13 @@ table.header th {
   top: 0;
   bottom: 0;
   overflow: auto;
-  cursor: default;
 }
 
 
 @media screen and (max-width: 1050px) {
   .split-view-contents-requests {
     left: 0px;
-    width: 680px;
+    width: 480px;
     bottom:50%;
     width:100%;
   }
@@ -192,14 +202,14 @@ table.header th {
     bottom: none;
     height: 100%;
     left: 0px;
-    width: 681px;
+    width: 481px;
   }
 
   .split-view-contents-details {
     top:0px;
     height:auto;
     right: 0px;
-    left: 680px;
+    left: 480px;
     width: auto;
     min-width: 365px;
   }
@@ -217,12 +227,11 @@ table.header th {
     cursor: ew-resize;
   }
 
-  .data-grid table th.duration {
-    border-right: none;
-    width: 51px;
-  }
+}
 
-
+.data-grid table th.duration {
+  border-right: none;
+  width: 75px;
 }
 
 .tabbed-pane {
@@ -249,6 +258,10 @@ ul.tabbed-pane-header-tabs {
   top:-16px;
   left:-50px;
   min-width: 300px;
+}
+
+.fl {
+  float: left;
 }
 
 .tabbed-pane-header-tab {
@@ -278,7 +291,7 @@ ul.tabbed-pane-header-tabs {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
   white-space: nowrap;
   display:block;
-  width:45px;
+  padding: 0 10px; 
   text-align: center;
 }
 
@@ -312,11 +325,19 @@ table#requests tr.selected {
   color: white
 }
 
-.number-of-queries {
+.queries-summary {
   font-family: Lucida Grande, sans-serif;
   font-size: 11px;
   padding: 7px 0 0 5px;
   font-weight: bold;
+}
+
+.cached-queries-control {
+  float: right;
+}
+
+table#db .CACHE, table#db .CACHE a {
+  color: #aaa;
 }
 
 #message-box {
@@ -328,6 +349,27 @@ table#requests tr.selected {
   color: black;
   font-size: 12px;
   padding: 1px 5px;
-  display: none;
 }
+
+table .fluid {
+  width: 100%
+}
+
+table#breakdown td {
+  vertical-align: middle;
+}
+
+table#breakdown td.meter-col {
+  padding: 2px 0;
+}
+
+.meter {
+  padding: 9px 6px;
+  height: 30px;
+  background: #eee;
+  float:left;
+}
+
+
+ 
 

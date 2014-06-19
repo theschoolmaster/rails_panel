@@ -1,3 +1,17 @@
+## 2014-05-19 RailsPanel 0.2.1
+* Fix width of Response Time column in horizontal mode
+* Maintain minimum width of the details panel while resizing in vertical mode
+
+## 2014-05-18 RailsPanel 0.2.0
+* UI changes: time units, breakdown tab, minor tweaks & fixes
+
+## 2014-04-16 RailsPanel 0.1.9 & meta_request 0.3.0 
+* ActiveRecord & Log entries caller locations https://github.com/dejan/rails_panel/issues/13
+* Optional display for cached ActiveRecord queries https://github.com/dejan/rails_panel/pull/68
+
+## 2014-04-07 meta_request 0.2.9
+* Fix logging https://github.com/dejan/rails_panel/issues/64
+
 ## 2014-01-13 RailsPanel 0.1.8
 * Panel dividers
 

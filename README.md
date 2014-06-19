@@ -3,7 +3,7 @@ RailsPanel
 
 RailsPanel is a Chrome extension for Rails development that will end your tailing of development.log. Have all information about your Rails app requests in the browser - in the Developer Tools panel. Provides insight to db/rendering/total times, parameter list, rendered views and more. 
 
-![](https://dl.dropbox.com/u/69357609/Captured/WOvkF.png)
+![railspanel](https://cloud.githubusercontent.com/assets/4494/3090049/917e5378-e586-11e3-9bd4-1db232968126.png)
 
 ## Installation
 
@@ -24,7 +24,17 @@ If you have a problem installing extension from Chrome Store or just want to run
 ## Supported environments
 
 * Rails 3, Rails 4
-* Ruby 1.9.3, Ruby 2.0
+* Ruby 1.9.3, Ruby 2.0, Ruby 2.1
+
+## Editor integration
+
+Select your editor on the extension options page: chrome://extensions. Following editors are supported:
+
+* MacVim
+* TextMate
+* Sublime
+* Emacs 
+* RubyMine
 
 ## Compatibility Warnings
 

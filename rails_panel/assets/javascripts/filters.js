@@ -45,4 +45,13 @@ angular.module('RailsPanel', [])
     return function(input) {
       return ansi2html(input);
     }
+  }).
+  filter('viewMethod', function() {
+    return function(input) {
+      if( /^_app_views.*/.test(input) ) {
+        return '';
+      } else {
+        return input;
+      }
+    }
 });

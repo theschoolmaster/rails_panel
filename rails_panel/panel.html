@@ -73,7 +73,7 @@
                   <a href="#tab-params" class="tabbed-pane-header-tab-title">Params</a>
                 </li>
                 <li class="tabbed-pane-header-tab">
-                  <a href="#tab-db" class="tabbed-pane-header-tab-title">ActiveRecord</a>
+                  <a href="#tab-db" class="tabbed-pane-header-tab-title">Sequel</a>
                 </li>
                 <li class="tabbed-pane-header-tab">
                   <a href="#tab-views" class="tabbed-pane-header-tab-title">Rendering</a>
@@ -102,7 +102,7 @@
                   <tr>
                     <td class="meter-col">
                       <div class="meter" style="width:{{activeRequest().payload.dbRuntimeRounded/activeRequest().duration*100}}%;">
-                        <span class="meter-val">ActiveRecord</span>
+                        <span class="meter-val">Sequel</span>
                       </div>
                     </td>
                     <td class="duration" data-sort-value="-{{activeRequest().payload.dbRuntimeRounded}}">{{activeRequest().payload.dbRuntimeRounded | number:0}} ms</td>
@@ -148,7 +148,7 @@
                 <thead>
                   <tr>
                     <th data-sort="string">Location</th>
-                    <th data-sort="string">Type</th>
+                    <th data-sort="string">Method</th>
                     <th class="fluid">SQL</th>
                     <th data-sort="float" class="duration">Duration</th>
                   </tr>
@@ -156,7 +156,7 @@
                 <tbody>
                   <tr ng-repeat="sql in activeSqls()" ng-show="showQuery(sql.payload.name)" class="{{sql.payload.name}}">
                     <td><a href="{{sql.payload.filename | editorify:sql.payload.line}}">{{sql.payload.filename | normalizePath}}:{{sql.payload.line}}</a>
-                    <td>{{sql.payload.name}}</td>
+                    <td>{{sql.payload.method | viewMethod }}</td>
                     <td>{{sql.payload.sql}}</td>
                     <td class="duration" data-sort-value="{{-sql.duration}}">{{sql.duration | number:0}} ms</td>
                   </tr>

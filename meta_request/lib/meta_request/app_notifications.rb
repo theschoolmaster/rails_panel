@@ -6,7 +6,15 @@ module MetaRequest
     def self.subscribe
       new.
         subscribe("meta_request.log").
-        subscribe("sql.sequel").
+        subscribe("sql.sequel") do |*args|
+          name, start, ending, transaction_id, payload = args
+          dev_caller = caller.select { |c| c=~/#{Rails.root}/}.first
+          if dev_caller
+            c = Callsite.parse(dev_caller)
+            payload.merge!(:line => c.line, :filename => c.filename, :method => c.method)
+          end
+          Event.new(name, start, ending, transaction_id, payload)
+        end.
         subscribe("sql.active_record") do |*args|
           name, start, ending, transaction_id, payload = args
           dev_caller = caller.select { |c| c=~/#{Rails.root}/}.first

@@ -21,7 +21,7 @@ module MetaRequest
       # returns true if path should be ignored (not handled by RailsPanel extension)
       #
       def skip?(path)
-        asset?(path) || path.start_with?('/__better_errors/')
+        asset?(path) || path.start_with?('/__better_errors/') || path.start_with?('/peek/')
       end
 
       def asset?(path)

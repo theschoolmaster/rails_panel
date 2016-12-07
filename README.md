@@ -50,6 +50,10 @@ and your browser will refresh like a madman.
 
 You can clear the panel with the usual shortcuts of ⌘+k or ctrl+l.
 
+## Code status
+
+[![CircleCI](https://circleci.com/gh/dejan/rails_panel.svg?style=svg&circle-token=56cf52dd2729102bb9b6e23d5e2fcc8eff0875b3)](https://circleci.com/gh/dejan/rails_panel)
+
 ## Licence
 
 Copyright (c) 2012 Dejan Simic

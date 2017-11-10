@@ -21,12 +21,21 @@ Install RailsPanel extension from the [Chrome WebStore](https://chrome.google.co
 
 ## Install unpacked version
 
+<<<<<<< HEAD
 If you have a problem installing extension from Chrome Store or just want to run latest and hack on it, just clone the repo (say under ~/workspace/rails_panel) and in "Developer mode" Chrome Extensions page select "Load Unpacked extension..." and select "~/workspace/rails_panel/rails_panel".
 
 ## Supported environments
 
 * Rails 3, Rails 4, Rails 5
 * Ruby 1.9.3, Ruby 2.0, Ruby 2.1, Ruby 2.2, Ruby 2.3
+=======
+If you have a problem installing extension from Chrome Store or just want to run latest and hack on it, just clone the repo (say under `~/workspace/rails_panel`) and in "Developer mode" Chrome Extensions page select "Load Unpacked extension..." and select `~/workspace/rails_panel/rails_panel`.
+
+## Supported environments
+
+* Rails 4 and 5
+* Ruby 2.x
+>>>>>>> 69c39daa4139b116f9ab75970800befa62a8ad20
 
 ## Editor integration
 

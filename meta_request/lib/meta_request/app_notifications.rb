@@ -24,7 +24,7 @@ module MetaRequest
         payload[:options][k] = payload.delete(k) unless k.in? CACHE_KEY_COLUMNS
       end
 
-      dev_caller = caller.detect { |c| c.include? MetaRequest.rails_root }
+      dev_caller = caller.detect { |c| c.start_with? MetaRequest.rails_root }
       if dev_caller
         c = Callsite.parse(dev_caller)
         payload.merge!(:line => c.line, :filename => c.filename, :method => c.method)
@@ -39,7 +39,7 @@ module MetaRequest
         subscribe("meta_request.log").
         subscribe("sql.sequel") do |*args|
           name, start, ending, transaction_id, payload = args
-          dev_caller = caller.detect { |c| c.include? MetaRequest.rails_root and !c.include? 'vendor' }
+          dev_caller = caller.detect { |c| c.start_with? MetaRequest.rails_root and !c.include? 'vendor' }
           if dev_caller
             c = Callsite.parse(dev_caller)
             payload.merge!(:line => c.line, :filename => c.filename, :method => c.method)
